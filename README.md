@@ -56,7 +56,7 @@ Verified / provided directly by the shop:
   - **Zach** — [@zatattooer](https://www.instagram.com/zatattooer/) — DM or email, `zatattoer@gmail.com`
   - **Austin** — [@austinfromaustintattoos](https://www.instagram.com/austinfromaustintattoos/) — DM
 - The five artist headshots are the real photos provided (not stock images) — one artist's cap literally reads "Our Lady Tattoo Parlor," confirming these are the shop's actual crew.
-- The 11 shop photos (`images/shop/`), 3 sign/storefront photos (`images/usp/`), and 30 tattoo photos (`images/gallery/`) are real, provided directly.
+- The 12 shop photos (`images/shop/`), 3 sign/storefront photos (`images/usp/`), and 30 tattoo photos (`images/gallery/`) are real, provided directly.
 - Hours (Tue–Sat, 12–8, closed Sun/Mon) in `_data/site.yml` — originally pulled from public listings, now also confirmed by the shop's own hand-painted door signage (`images/usp/door-signage.jpg`).
 - The 3 hero backdrop photos (`images/merch/merch-1.jpg` through `merch-3.jpg`) — the shop merch/vintage car lifestyle shots that cross-fade behind the headline.
 
