@@ -17,7 +17,7 @@ Then open `http://localhost:4000`. `bundle exec jekyll build` writes the static 
 - `_config.yml` — site config (title, description, url, timezone)
 - `_data/site.yml` — all shop info: address, phone, email, hours, map/review URLs, socials
 - `_data/artists.yml` — the crew: name, Instagram, optional booking email, booking-method label, headshot path
-- `_data/shop_gallery.yml` — the 11 "around the shop" photos on the gallery page
+- `_data/shop_gallery.yml` — the 12 "around the shop" photos on the gallery page
 - `_data/gallery.yml` — the 30 recent-work photo filenames for the lightbox grid
 - `_includes/head.html`, `header.html`, `footer.html` — shared page chrome
 - `_includes/schema-business.html`, `schema-gallery.html` — JSON-LD structured data
