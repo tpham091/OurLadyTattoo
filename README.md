@@ -18,7 +18,7 @@ Then open `http://localhost:4000`. `bundle exec jekyll build` writes the static 
 - `_data/site.yml` — all shop info: address, phone, email, hours, map/review URLs, socials
 - `_data/artists.yml` — the crew: name, Instagram, optional booking email, booking-method label, headshot path
 - `_data/shop_gallery.yml` — the 11 "around the shop" photos on the gallery page
-- `_data/gallery.yml` — the 29 recent-work photo filenames for the lightbox grid
+- `_data/gallery.yml` — the 30 recent-work photo filenames for the lightbox grid
 - `_includes/head.html`, `header.html`, `footer.html` — shared page chrome
 - `_includes/schema-business.html`, `schema-gallery.html` — JSON-LD structured data
 - `_layouts/default.html` — wraps every page in head/header/footer
@@ -29,7 +29,7 @@ Then open `http://localhost:4000`. `bundle exec jekyll build` writes the static 
 - `images/artists/` — real artist headshots (Austin, Dane, Davis, Justin, Zach)
 - `images/shop/` — real shop photos (storefront, stations, flash wall, the shop dog, door/window signage)
 - `images/usp/` — real hand-painted sign/storefront photos used in the homepage "Why Us" cards
-- `images/gallery/` — 29 real tattoo photos from the crew
+- `images/gallery/` — 30 real tattoo photos from the crew
 - `images/favicon.svg`, `icons/apple-touch-icon.png` — site icons
 - `fonts/` — self-hosted webfonts (Rye, Oswald, Arvo, Permanent Marker — vendored from Google Fonts so the page has no external font dependency)
 
@@ -56,7 +56,7 @@ Verified / provided directly by the shop:
   - **Zach** — [@zatattooer](https://www.instagram.com/zatattooer/) — DM or email, `zatattoer@gmail.com`
   - **Austin** — [@austinfromaustintattoos](https://www.instagram.com/austinfromaustintattoos/) — DM
 - The five artist headshots are the real photos provided (not stock images) — one artist's cap literally reads "Our Lady Tattoo Parlor," confirming these are the shop's actual crew.
-- The 11 shop photos (`images/shop/`), 3 sign/storefront photos (`images/usp/`), and 29 tattoo photos (`images/gallery/`) are real, provided directly.
+- The 11 shop photos (`images/shop/`), 3 sign/storefront photos (`images/usp/`), and 30 tattoo photos (`images/gallery/`) are real, provided directly.
 - Hours (Tue–Sat, 12–8, closed Sun/Mon) in `_data/site.yml` — originally pulled from public listings, now also confirmed by the shop's own hand-painted door signage (`images/usp/door-signage.jpg`).
 - The 3 hero backdrop photos (`images/merch/merch-1.jpg` through `merch-3.jpg`) — the shop merch/vintage car lifestyle shots that cross-fade behind the headline.
 
