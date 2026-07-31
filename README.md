@@ -19,16 +19,24 @@ python3 -m http.server 8000
 
 ## What's real vs. placeholder
 
-Pulled from public listings (Google/Yelp/search) and verified where possible:
+Verified / provided directly by the shop:
 
-- Address, phone number `(512) 210-8090`, and Instagram `@ourladytattoo` are real.
-- Hours (Tue–Sat, 12–8, closed Sun/Mon) came from public directory listings, not the shop's own channels — **please confirm before relying on them.**
+- Address, phone number `(512) 210-8090`, and shop Instagram `@ourladytattoo`.
+- Shop email: `ourladytattoo@gmail.com`.
+- Each artist's real Instagram and preferred booking method:
+  - **Justin** (owner) — [@doctaylortattooist](https://www.instagram.com/doctaylortattooist/) — DM or email, `doctaylortattooist@gmail.com`
+  - **Dane** — [@sweetdanetattoo](https://www.instagram.com/sweetdanetattoo/) — DM
+  - **Davis** — [@davis.tattooer](https://www.instagram.com/davis.tattooer/) — DM
+  - **Zach** — [@zatattooer](https://www.instagram.com/zatattooer/) — DM or email, `zatattoer@gmail.com`
+  - **Austin** — [@austinfromaustintattoos](https://www.instagram.com/austinfromaustintattoos/) — DM
 - The five artist headshots are the real photos provided (not stock images) — one artist's cap literally reads "Our Lady Tattoo Parlor," confirming these are the shop's actual crew.
+
+Pulled from public listings (Google/Yelp/search), not the shop's own channels — worth confirming:
+
+- Hours (Tue–Sat, 12–8, closed Sun/Mon).
 
 Still placeholder / sample, ready for you to swap in:
 
-- **Contact email** (`hello@ourladytattoo.com`) — a placeholder; no public email was confidently verified.
-- **Per-artist Instagram links** — all five artist cards currently link to the shop's main Instagram (`@ourladytattoo`) because individual artist handles aren't public. Swap each `<a class="artist-card" href="...">` in `index.html` for the artist's personal handle when you have it.
 - **Artist specialty tags** (e.g. "American Traditional," "Blackwork & Custom") — reasonable samples, not confirmed bios. Edit the `<span class="artist-role">` text per artist.
 - **Service list** in the "why us" flash strip — a standard traditional-shop service set, not a confirmed menu.
 
