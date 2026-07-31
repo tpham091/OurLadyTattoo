@@ -58,6 +58,7 @@ Verified / provided directly by the shop:
 - The five artist headshots are the real photos provided (not stock images) — one artist's cap literally reads "Our Lady Tattoo Parlor," confirming these are the shop's actual crew.
 - The 11 shop photos (`images/shop/`), 3 sign/storefront photos (`images/usp/`), and 21 tattoo photos (`images/gallery/`) are real, provided directly.
 - Hours (Tue–Sat, 12–8, closed Sun/Mon) in `_data/site.yml` — originally pulled from public listings, now also confirmed by the shop's own hand-painted door signage (`images/usp/door-signage.jpg`).
+- The 3 hero backdrop photos (`images/merch/merch-1.jpg` through `merch-3.jpg`) — the shop merch/vintage car lifestyle shots that cross-fade behind the headline.
 
 Worth double-checking:
 
@@ -66,20 +67,5 @@ Worth double-checking:
 Still placeholder / sample, ready for you to edit:
 
 - The "why us" card copy and the service list (in `index.html`) — written to fit a traditional street shop, not a confirmed menu.
-
-### Still needed: hero backdrop photos
-
-The hero section is wired up to cross-fade 3 rotating background photos — the
-"MERCH" lifestyle shots of someone wearing shop merch by a car. The CSS/markup
-is ready but commented out in `index.html` right after `<section class="hero"
-id="top">`. These photos have been pasted inline in chat twice now, but inline
-chat images never reach disk as files — only a **zip attachment** does (the
-same way the artist headshots, shop photos, USP photos, and gallery photos
-were all sent). Once they arrive as a zip:
-
-1. Save the 3 photos as `images/merch/merch-1.jpg`, `merch-2.jpg`, `merch-3.jpg`.
-2. Uncomment the `<div class="hero-backdrop">...</div>` block in `index.html`.
-
-That's it — the cross-fade animation in `css/style.css` (`.hero-bg-photo` / `@keyframes heroFade`) is already in place.
 
 See the HTML comment near the top of `index.html` for the same notes in-line.
