@@ -15,20 +15,29 @@ schema: business
     - Each artist's real Instagram handle and preferred booking method
       (DM vs. DM or Email), with personal booking emails where given —
       all editable in _data/artists.yml.
-    - Hours (Tue–Sat, 12–8, closed Sun/Mon) were pulled from public directory
-      listings, not the shop's own channels — please confirm before relying
-      on them. Editable in _data/site.yml.
+    - Hours (Tue–Sat, 12–8, closed Sun/Mon) — confirmed by the shop's own
+      hand-painted door signage (images/usp/door-signage.jpg), not just
+      public listings. Editable in _data/site.yml.
   Still placeholder / sample content to swap out:
     - The "Why Us" copy and service list below are written to fit a
       traditional street shop — edit freely to match how you actually work.
     - Hero rotating photo backdrop is scaffolded but empty — see the
       commented-out block right after <section class="hero" for what to
       drop in once the 3 merch/lifestyle photos are available as files.
+  Worth double-checking:
+    - The shop's door signage promotes @doctaylortattooist and
+      @lurksteadytattoos as its two Instagram handles. @doctaylortattooist
+      is already Justin's card. @lurksteadytattoos isn't currently attached
+      to any artist card in _data/artists.yml — let me know whose handle
+      that is (an existing artist's second account, or someone new) and
+      I'll wire it up.
   Real assets already in place:
     - images/artists/*.jpg are the real headshots you provided (Austin,
       Dane, Davis, Justin, Zach) — no stock photography was used.
     - images/shop/*.jpg are real shop photos (storefront, stations, flash
-      wall, the shop dog) used in the "Why Us" cards and on gallery.html.
+      wall, the shop dog, the door and window signage) used on gallery.html.
+    - images/usp/*.jpg are real hand-painted sign/storefront photos used
+      in the homepage "Why Us" cards.
     - images/gallery/*.jpg are 21 real tattoo photos from the crew, shown
       in the lightbox grid on gallery.html.
 -->
@@ -94,21 +103,21 @@ schema: business
 
     <ul class="usp-grid">
       <li class="usp-card">
-        <img src="{{ '/images/shop/working.jpg' | relative_url }}" width="800" height="600" alt="Tattoo artist at work inside Our Lady Tattoo Parlor" loading="lazy" decoding="async">
+        <img src="{{ '/images/usp/hanging-sign.jpg' | relative_url }}" width="800" height="600" alt="Hand-painted Our Lady Tattoo Parlor hanging sign" loading="lazy" decoding="async">
         <div class="body">
           <h3>Old-School Craft</h3>
           <p>Bold lines, saturated color, technique built on tradition — from custom pieces to straight-off-the-wall flash.</p>
         </div>
       </li>
       <li class="usp-card">
-        <img src="{{ '/images/shop/outside-shop.jpg' | relative_url }}" width="800" height="600" alt="The front of Our Lady Tattoo Parlor on San Antonio St" loading="lazy" decoding="async">
+        <img src="{{ '/images/usp/door-signage.jpg' | relative_url }}" width="800" height="600" alt="Our Lady Tattoo Parlor front door, hand-lettered with hours and walk-ins welcome" loading="lazy" decoding="async">
         <div class="body">
           <h3>Walk-Ins Welcome</h3>
           <p>Got an afternoon and an idea? Swing by. Small pieces and ready flash get inked same-day, no appointment required.</p>
         </div>
       </li>
       <li class="usp-card">
-        <img src="{{ '/images/shop/artist-at-work.jpg' | relative_url }}" width="800" height="600" alt="The crew and counter inside Our Lady Tattoo Parlor" loading="lazy" decoding="async">
+        <img src="{{ '/images/usp/storefront.jpg' | relative_url }}" width="800" height="600" alt="Our Lady Tattoo Parlor storefront with a vintage car parked out front" loading="lazy" decoding="async">
         <div class="body">
           <h3>A Crew, Not a Chain</h3>
           <p>Every artist here has their own hand and their own following. Book direct with the one whose style fits your idea.</p>

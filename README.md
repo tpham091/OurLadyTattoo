@@ -17,7 +17,7 @@ Then open `http://localhost:4000`. `bundle exec jekyll build` writes the static 
 - `_config.yml` — site config (title, description, url, timezone)
 - `_data/site.yml` — all shop info: address, phone, email, hours, map/review URLs, socials
 - `_data/artists.yml` — the crew: name, Instagram, optional booking email, booking-method label, headshot path
-- `_data/shop_gallery.yml` — the 8 "around the shop" photos on the gallery page
+- `_data/shop_gallery.yml` — the 11 "around the shop" photos on the gallery page
 - `_data/gallery.yml` — the 21 recent-work photo filenames for the lightbox grid
 - `_includes/head.html`, `header.html`, `footer.html` — shared page chrome
 - `_includes/schema-business.html`, `schema-gallery.html` — JSON-LD structured data
@@ -27,7 +27,8 @@ Then open `http://localhost:4000`. `bundle exec jekyll build` writes the static 
 - `css/style.css` — all styling, no framework
 - `js/main.js` — mobile nav toggle + gallery lightbox
 - `images/artists/` — real artist headshots (Austin, Dane, Davis, Justin, Zach)
-- `images/shop/` — real shop photos (storefront, stations, flash wall, the shop dog)
+- `images/shop/` — real shop photos (storefront, stations, flash wall, the shop dog, door/window signage)
+- `images/usp/` — real hand-painted sign/storefront photos used in the homepage "Why Us" cards
 - `images/gallery/` — 21 real tattoo photos from the crew
 - `images/favicon.svg`, `icons/apple-touch-icon.png` — site icons
 - `fonts/` — self-hosted webfonts (Rye, Oswald, Arvo, Permanent Marker — vendored from Google Fonts so the page has no external font dependency)
@@ -55,11 +56,12 @@ Verified / provided directly by the shop:
   - **Zach** — [@zatattooer](https://www.instagram.com/zatattooer/) — DM or email, `zatattoer@gmail.com`
   - **Austin** — [@austinfromaustintattoos](https://www.instagram.com/austinfromaustintattoos/) — DM
 - The five artist headshots are the real photos provided (not stock images) — one artist's cap literally reads "Our Lady Tattoo Parlor," confirming these are the shop's actual crew.
-- The 8 shop photos (`images/shop/`) and 21 tattoo photos (`images/gallery/`) are real, provided directly.
+- The 11 shop photos (`images/shop/`), 3 sign/storefront photos (`images/usp/`), and 21 tattoo photos (`images/gallery/`) are real, provided directly.
+- Hours (Tue–Sat, 12–8, closed Sun/Mon) in `_data/site.yml` — originally pulled from public listings, now also confirmed by the shop's own hand-painted door signage (`images/usp/door-signage.jpg`).
 
-Pulled from public listings (Google/Yelp/search), not the shop's own channels — worth confirming:
+Worth double-checking:
 
-- Hours (Tue–Sat, 12–8, closed Sun/Mon) in `_data/site.yml`.
+- The door signage (`images/usp/door-signage.jpg`) promotes two Instagram handles: `@doctaylortattooist` (already Justin's card) and `@lurksteadytattoos`, which isn't currently attached to any artist in `_data/artists.yml`. Let us know whose handle that is and it can be wired up.
 
 Still placeholder / sample, ready for you to edit:
 
@@ -67,11 +69,13 @@ Still placeholder / sample, ready for you to edit:
 
 ### Still needed: hero backdrop photos
 
-The hero section is wired up to cross-fade 3 rotating background photos (originally
-described as "MERCH," "MERCH 2," "MERCH 3" — lifestyle shots of someone wearing shop
-merch by a car). The CSS/markup is ready but commented out in `index.html` right after
-`<section class="hero" id="top">`, because those 3 photos weren't available as files in
-this session (only pasted inline in chat, which doesn't transfer to disk). To finish it:
+The hero section is wired up to cross-fade 3 rotating background photos — the
+"MERCH" lifestyle shots of someone wearing shop merch by a car. The CSS/markup
+is ready but commented out in `index.html` right after `<section class="hero"
+id="top">`. These photos have been pasted inline in chat twice now, but inline
+chat images never reach disk as files — only a **zip attachment** does (the
+same way the artist headshots, shop photos, USP photos, and gallery photos
+were all sent). Once they arrive as a zip:
 
 1. Save the 3 photos as `images/merch/merch-1.jpg`, `merch-2.jpg`, `merch-3.jpg`.
 2. Uncomment the `<div class="hero-backdrop">...</div>` block in `index.html`.
