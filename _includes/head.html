@@ -1,0 +1,29 @@
+{% assign business = site.data.site %}
+{% assign page_title = page.title | default: site.title %}
+{% assign page_description = page.description | default: site.description %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#20160f">
+
+<title>{{ page_title }}</title>
+<meta name="description" content="{{ page_description | escape }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="{{ business.brand }}">
+<meta property="og:title" content="{{ page_title | escape }}">
+<meta property="og:description" content="{{ page_description | escape }}">
+<meta property="og:url" content="{{ page.url | absolute_url }}">
+
+<link rel="icon" href="{{ '/images/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="apple-touch-icon" href="{{ '/icons/apple-touch-icon.png' | relative_url }}">
+<link rel="manifest" href="{{ '/site.webmanifest' | relative_url }}">
+
+<link rel="stylesheet" href="{{ '/css/style.css' | relative_url }}">
+
+{% if page.schema == "business" %}
+{% include schema-business.html %}
+{% elsif page.schema == "gallery" %}
+{% include schema-gallery.html %}
+{% endif %}

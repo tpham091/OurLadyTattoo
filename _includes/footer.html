@@ -1,0 +1,7 @@
+{% assign business = site.data.site %}
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="display">{{ business.brand }}</span>
+    <span>{{ business.address_line_1 }}, {{ business.address_line_2 }} &middot; <a href="{{ business.phone_href }}">{{ business.phone }}</a> &middot; <a href="{{ business.instagram_url }}" target="_blank" rel="noopener noreferrer">{{ business.instagram_handle }}</a></span>
+  </div>
+</footer>

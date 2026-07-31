@@ -1,0 +1,24 @@
+# booking: label shown on the artist card ("DM to Book" or "DM or Email to Book")
+# email: optional — only artists who take bookings by email get the envelope icon
+- name: Justin
+  instagram: "https://www.instagram.com/doctaylortattooist/"
+  email: doctaylortattooist@gmail.com
+  booking: "DM or Email to Book"
+  image: /images/artists/justin.jpg
+- name: Dane
+  instagram: "https://www.instagram.com/sweetdanetattoo/"
+  booking: "DM to Book"
+  image: /images/artists/dane.jpg
+- name: Davis
+  instagram: "https://www.instagram.com/davis.tattooer/"
+  booking: "DM to Book"
+  image: /images/artists/davis.jpg
+- name: Zach
+  instagram: "https://www.instagram.com/zatattooer/"
+  email: zatattoer@gmail.com
+  booking: "DM or Email to Book"
+  image: /images/artists/zach.jpg
+- name: Austin
+  instagram: "https://www.instagram.com/austinfromaustintattoos/"
+  booking: "DM to Book"
+  image: /images/artists/austin.jpg

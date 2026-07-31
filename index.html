@@ -1,23 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow">
-<meta name="theme-color" content="#20160f">
-
-<title>Our Lady Tattoo Parlor — San Marcos, TX</title>
-<meta name="description" content="Our Lady Tattoo Parlor is a San Marcos, TX tattoo shop specializing in American traditional, custom work, cover-ups and flash. Walk-ins welcome, Tue–Sat.">
-<link rel="canonical" href="https://ourladytattoo.com/">
-
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Our Lady Tattoo Parlor">
-<meta property="og:title" content="Our Lady Tattoo Parlor — San Marcos, TX">
-<meta property="og:description" content="American traditional, custom work, cover-ups and flash in the heart of San Marcos. Walk-ins welcome, Tuesday–Saturday.">
-
-<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
-
-<link rel="stylesheet" href="css/style.css">
+---
+layout: default
+title: Our Lady Tattoo Parlor — San Marcos, TX
+description: Our Lady Tattoo Parlor is a San Marcos, TX tattoo shop specializing in American traditional, custom work, cover-ups and flash. Walk-ins welcome, Tue–Sat.
+schema: business
+---
+{% assign business = site.data.site %}
 
 <!--
   CONTENT NOTES FOR THE SHOP OWNER
@@ -26,15 +13,14 @@
     - Address, phone number, shop Instagram handle, and shop name.
     - Shop email: ourladytattoo@gmail.com.
     - Each artist's real Instagram handle and preferred booking method
-      (DM vs. DM or Email), with personal booking emails where given.
+      (DM vs. DM or Email), with personal booking emails where given —
+      all editable in _data/artists.yml.
     - Hours (Tue–Sat, 12–8, closed Sun/Mon) were pulled from public directory
       listings, not the shop's own channels — please confirm before relying
-      on them.
+      on them. Editable in _data/site.yml.
   Still placeholder / sample content to swap out:
-    - Artist specialty tags (e.g. "American Traditional") are samples —
-      swap for each artist's real specialty/bio.
-    - The "Why Us" copy and service list are written to fit a traditional
-      street shop — edit freely to match how you actually work.
+    - The "Why Us" copy and service list below are written to fit a
+      traditional street shop — edit freely to match how you actually work.
     - Hero rotating photo backdrop is scaffolded but empty — see the
       commented-out block right after <section class="hero" for what to
       drop in once the 3 merch/lifestyle photos are available as files.
@@ -47,39 +33,6 @@
       in the lightbox grid on gallery.html.
 -->
 
-</head>
-<body>
-
-<a class="skip-link" href="#main">Skip to content</a>
-
-<div class="hours-strip">
-  <div class="wrap mono">
-    <span>Tue&nbsp;–&nbsp;Sat · 12PM&nbsp;–&nbsp;8PM · Closed Sun &amp; Mon</span>
-    <span>Walk-ins welcome</span>
-  </div>
-</div>
-
-<header class="topbar">
-  <div class="topbar-inner">
-    <a href="#top" class="brand">
-      <svg class="mark" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>
-      <span>Our Lady Tattoo<small>SAN MARCOS, TEXAS</small></span>
-    </a>
-    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
-    </button>
-    <nav class="topnav" id="primary-nav" aria-label="Primary">
-      <a href="#why">Why Us</a>
-      <a href="#crew">Artists</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="#contact">Contact</a>
-      <a href="tel:+15122108090" class="call">(512) 210-8090</a>
-    </nav>
-  </div>
-</header>
-
-<main id="main">
-
 <section class="hero" id="top">
   <!--
     Rotating photo backdrop: drop your 3 merch/lifestyle photos in as
@@ -89,9 +42,9 @@
     handle the cross-fade — no other changes needed.
 
     <div class="hero-backdrop" aria-hidden="true">
-      <img class="hero-bg-photo" src="images/merch/merch-1.jpg" alt="">
-      <img class="hero-bg-photo" src="images/merch/merch-2.jpg" alt="">
-      <img class="hero-bg-photo" src="images/merch/merch-3.jpg" alt="">
+      <img class="hero-bg-photo" src="{{ '/images/merch/merch-1.jpg' | relative_url }}" alt="">
+      <img class="hero-bg-photo" src="{{ '/images/merch/merch-2.jpg' | relative_url }}" alt="">
+      <img class="hero-bg-photo" src="{{ '/images/merch/merch-3.jpg' | relative_url }}" alt="">
     </div>
     <div class="hero-scrim" aria-hidden="true"></div>
   -->
@@ -111,11 +64,11 @@
   </svg>
 
   <div class="wrap hero-content">
-    <span class="eyebrow mono">121 W San Antonio St &middot; San Marcos, TX</span>
+    <span class="eyebrow mono">{{ business.address_line_1 }} &middot; {{ business.city_state }}</span>
     <h1>Old-School Tattoos, <em>Homegrown</em> Shop.</h1>
     <p class="lede">Bold American traditional, sharp custom work, and flash straight off the wall — inked up in the heart of San Marcos. Walk in or book with the artist whose work speaks to you.</p>
     <div class="hero-ctas">
-      <a href="tel:+15122108090" class="btn btn-solid">Call the Shop</a>
+      <a href="{{ business.phone_href }}" class="btn btn-solid">Call the Shop</a>
       <a href="#crew" class="btn btn-outline">Meet the Crew</a>
     </div>
   </div>
@@ -141,21 +94,21 @@
 
     <ul class="usp-grid">
       <li class="usp-card">
-        <img src="images/shop/working.jpg" width="800" height="600" alt="Tattoo artist at work inside Our Lady Tattoo Parlor" loading="lazy" decoding="async">
+        <img src="{{ '/images/shop/working.jpg' | relative_url }}" width="800" height="600" alt="Tattoo artist at work inside Our Lady Tattoo Parlor" loading="lazy" decoding="async">
         <div class="body">
           <h3>Old-School Craft</h3>
           <p>Bold lines, saturated color, technique built on tradition — from custom pieces to straight-off-the-wall flash.</p>
         </div>
       </li>
       <li class="usp-card">
-        <img src="images/shop/outside-shop.jpg" width="800" height="600" alt="The front of Our Lady Tattoo Parlor on San Antonio St" loading="lazy" decoding="async">
+        <img src="{{ '/images/shop/outside-shop.jpg' | relative_url }}" width="800" height="600" alt="The front of Our Lady Tattoo Parlor on San Antonio St" loading="lazy" decoding="async">
         <div class="body">
           <h3>Walk-Ins Welcome</h3>
           <p>Got an afternoon and an idea? Swing by. Small pieces and ready flash get inked same-day, no appointment required.</p>
         </div>
       </li>
       <li class="usp-card">
-        <img src="images/shop/artist-at-work.jpg" width="800" height="600" alt="The crew and counter inside Our Lady Tattoo Parlor" loading="lazy" decoding="async">
+        <img src="{{ '/images/shop/artist-at-work.jpg' | relative_url }}" width="800" height="600" alt="The crew and counter inside Our Lady Tattoo Parlor" loading="lazy" decoding="async">
         <div class="body">
           <h3>A Crew, Not a Chain</h3>
           <p>Every artist here has their own hand and their own following. Book direct with the one whose style fits your idea.</p>
@@ -185,97 +138,30 @@
     </div>
 
     <ul class="crew-grid">
+      {% for artist in site.data.artists %}
       <li>
         <div class="artist-card">
           <div class="pin" aria-hidden="true"></div>
-          <a class="photo-link" href="https://www.instagram.com/doctaylortattooist/" target="_blank" rel="noopener noreferrer" aria-label="View Justin's Instagram (opens in a new tab)">
-            <div class="photo-frame"><img src="images/artists/justin.jpg" width="800" height="800" alt="Portrait of tattoo artist Justin" loading="lazy" decoding="async"></div>
+          <a class="photo-link" href="{{ artist.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="View {{ artist.name }}'s Instagram (opens in a new tab)">
+            <div class="photo-frame"><img src="{{ artist.image | relative_url }}" width="800" height="800" alt="Portrait of tattoo artist {{ artist.name }}" loading="lazy" decoding="async"></div>
           </a>
-          <h3 class="artist-name">Justin</h3>
+          <h3 class="artist-name">{{ artist.name }}</h3>
           <div class="booking-row">
-            <span class="booking-label mono">DM or Email to Book</span>
+            <span class="booking-label mono">{{ artist.booking }}</span>
             <div class="booking-links">
-              <a class="icon-link" href="https://www.instagram.com/doctaylortattooist/" target="_blank" rel="noopener noreferrer" aria-label="DM Justin on Instagram (opens in a new tab)">
+              <a class="icon-link" href="{{ artist.instagram }}" target="_blank" rel="noopener noreferrer" aria-label="DM {{ artist.name }} on Instagram (opens in a new tab)">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
               </a>
-              <a class="icon-link" href="mailto:doctaylortattooist@gmail.com" aria-label="Email Justin">
+              {% if artist.email %}
+              <a class="icon-link" href="mailto:{{ artist.email }}" aria-label="Email {{ artist.name }}">
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
               </a>
+              {% endif %}
             </div>
           </div>
         </div>
       </li>
-      <li>
-        <div class="artist-card">
-          <div class="pin" aria-hidden="true"></div>
-          <a class="photo-link" href="https://www.instagram.com/sweetdanetattoo/" target="_blank" rel="noopener noreferrer" aria-label="View Dane's Instagram (opens in a new tab)">
-            <div class="photo-frame"><img src="images/artists/dane.jpg" width="800" height="800" alt="Portrait of tattoo artist Dane" loading="lazy" decoding="async"></div>
-          </a>
-          <h3 class="artist-name">Dane</h3>
-          <div class="booking-row">
-            <span class="booking-label mono">DM to Book</span>
-            <div class="booking-links">
-              <a class="icon-link" href="https://www.instagram.com/sweetdanetattoo/" target="_blank" rel="noopener noreferrer" aria-label="DM Dane on Instagram (opens in a new tab)">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="artist-card">
-          <div class="pin" aria-hidden="true"></div>
-          <a class="photo-link" href="https://www.instagram.com/davis.tattooer/" target="_blank" rel="noopener noreferrer" aria-label="View Davis's Instagram (opens in a new tab)">
-            <div class="photo-frame"><img src="images/artists/davis.jpg" width="800" height="800" alt="Portrait of tattoo artist Davis" loading="lazy" decoding="async"></div>
-          </a>
-          <h3 class="artist-name">Davis</h3>
-          <div class="booking-row">
-            <span class="booking-label mono">DM to Book</span>
-            <div class="booking-links">
-              <a class="icon-link" href="https://www.instagram.com/davis.tattooer/" target="_blank" rel="noopener noreferrer" aria-label="DM Davis on Instagram (opens in a new tab)">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="artist-card">
-          <div class="pin" aria-hidden="true"></div>
-          <a class="photo-link" href="https://www.instagram.com/zatattooer/" target="_blank" rel="noopener noreferrer" aria-label="View Zach's Instagram (opens in a new tab)">
-            <div class="photo-frame"><img src="images/artists/zach.jpg" width="800" height="800" alt="Portrait of tattoo artist Zach" loading="lazy" decoding="async"></div>
-          </a>
-          <h3 class="artist-name">Zach</h3>
-          <div class="booking-row">
-            <span class="booking-label mono">DM or Email to Book</span>
-            <div class="booking-links">
-              <a class="icon-link" href="https://www.instagram.com/zatattooer/" target="_blank" rel="noopener noreferrer" aria-label="DM Zach on Instagram (opens in a new tab)">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
-              </a>
-              <a class="icon-link" href="mailto:zatattoer@gmail.com" aria-label="Email Zach">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="artist-card">
-          <div class="pin" aria-hidden="true"></div>
-          <a class="photo-link" href="https://www.instagram.com/austinfromaustintattoos/" target="_blank" rel="noopener noreferrer" aria-label="View Austin's Instagram (opens in a new tab)">
-            <div class="photo-frame"><img src="images/artists/austin.jpg" width="800" height="800" alt="Portrait of tattoo artist Austin" loading="lazy" decoding="async"></div>
-          </a>
-          <h3 class="artist-name">Austin</h3>
-          <div class="booking-row">
-            <span class="booking-label mono">DM to Book</span>
-            <div class="booking-links">
-              <a class="icon-link" href="https://www.instagram.com/austinfromaustintattoos/" target="_blank" rel="noopener noreferrer" aria-label="DM Austin on Instagram (opens in a new tab)">
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </li>
+      {% endfor %}
     </ul>
   </div>
 </section>
@@ -293,7 +179,7 @@
         <h3>Had work done with us?</h3>
         <p>Leave us a review on Google — it helps other folks in San Marcos find the shop.</p>
       </div>
-      <a class="btn btn-google" href="https://www.google.com/maps/search/?api=1&query=Our%20Lady%20Tattoo%20Parlor%20121%20W%20San%20Antonio%20St%20San%20Marcos%20TX%2078666" target="_blank" rel="noopener noreferrer">
+      <a class="btn btn-google" href="{{ business.review_url | escape }}" target="_blank" rel="noopener noreferrer">
         <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
         Leave a Google review
       </a>
@@ -306,46 +192,33 @@
 
         <div class="info-row">
           <span class="mono" id="address-label">Address</span>
-          <a class="val" href="https://maps.google.com/maps?q=Our%20Lady%20Tattoo%20Parlor%2C%20121%20W%20San%20Antonio%20St%2C%20San%20Marcos%2C%20TX%2078666" target="_blank" rel="noopener noreferrer" aria-labelledby="address-label">121 W San Antonio St<br>San Marcos, TX 78666<span class="visually-hidden"> (opens Google Maps in a new tab)</span></a>
+          <a class="val" href="{{ business.maps_url | escape }}" target="_blank" rel="noopener noreferrer" aria-labelledby="address-label">{{ business.address_line_1 }}<br>{{ business.address_line_2 }}<span class="visually-hidden"> (opens Google Maps in a new tab)</span></a>
         </div>
         <div class="info-row">
           <span class="mono" id="phone-label">Phone</span>
-          <a class="val" href="tel:+15122108090" aria-labelledby="phone-label">(512) 210-8090</a>
+          <a class="val" href="{{ business.phone_href }}" aria-labelledby="phone-label">{{ business.phone }}</a>
         </div>
         <div class="info-row">
           <span class="mono" id="email-label">Email</span>
-          <a class="val" href="mailto:ourladytattoo@gmail.com" aria-labelledby="email-label">ourladytattoo@gmail.com</a>
+          <a class="val" href="mailto:{{ business.email }}" aria-labelledby="email-label">{{ business.email }}</a>
         </div>
         <div class="info-row">
           <span class="mono">Hours</span>
-          <span class="val">Tue&nbsp;–&nbsp;Sat, 12PM&nbsp;–&nbsp;8PM<br>Closed Sun &amp; Mon</span>
+          <span class="val">{{ business.hours_display }}</span>
         </div>
 
         <div class="social-row">
-          <a class="social-btn" href="https://www.facebook.com/ourladytattooparlor" target="_blank" rel="noopener noreferrer" aria-label="Our Lady Tattoo Parlor on Facebook (opens in a new tab)">
+          <a class="social-btn" href="{{ business.facebook_url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ business.brand }} on Facebook (opens in a new tab)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H8v3h3v7h3v-7h3l1-3h-4V9c0-.6.4-1 1-1z"/></svg>
           </a>
-          <a class="social-btn" href="https://www.instagram.com/ourladytattoo/" target="_blank" rel="noopener noreferrer" aria-label="Our Lady Tattoo Parlor on Instagram (opens in a new tab)">
+          <a class="social-btn" href="{{ business.instagram_url }}" target="_blank" rel="noopener noreferrer" aria-label="{{ business.brand }} on Instagram (opens in a new tab)">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.8" fill="currentColor" stroke="none"/></svg>
           </a>
         </div>
       </div>
       <div class="map-embed">
-        <iframe src="https://maps.google.com/maps?q=Our%20Lady%20Tattoo%20Parlor%2C%20121%20W%20San%20Antonio%20St%2C%20San%20Marcos%2C%20TX%2078666&z=16&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing Our Lady Tattoo Parlor at 121 W San Antonio St, San Marcos, TX"></iframe>
+        <iframe src="{{ business.map_embed_url | escape }}" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map showing {{ business.brand }} at {{ business.address_line_1 }}, {{ business.city_state }}"></iframe>
       </div>
     </div>
   </div>
 </section>
-
-</main>
-
-<footer class="site-footer">
-  <div class="wrap">
-    <span class="display">Our Lady Tattoo Parlor</span>
-    <span>121 W San Antonio St, San Marcos, TX 78666 &middot; <a href="tel:+15122108090">(512) 210-8090</a> &middot; <a href="https://www.instagram.com/ourladytattoo/" target="_blank" rel="noopener noreferrer">@ourladytattoo</a></span>
-  </div>
-</footer>
-
-<script src="js/main.js" defer></script>
-</body>
-</html>

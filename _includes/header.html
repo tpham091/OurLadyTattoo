@@ -1,0 +1,30 @@
+{% assign business = site.data.site %}
+{% assign nav_prefix = "" %}
+{% unless page.url == "/" %}
+  {% assign nav_prefix = "/" %}
+{% endunless %}
+<div class="hours-strip">
+  <div class="wrap mono">
+    <span>{{ business.hours_strip }}</span>
+    <span>{{ business.walkins }}</span>
+  </div>
+</div>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="{{ '/' | relative_url }}" class="brand">
+      <svg class="mark" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 2l1.6 5.4L19 9l-5.4 1.6L12 16l-1.6-5.4L5 9l5.4-1.6z"/></svg>
+      <span>{{ business.brand_short }}<small>{{ business.brand_location | upcase }}</small></span>
+    </a>
+    <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="primary-nav" aria-label="Toggle navigation menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="topnav" id="primary-nav" aria-label="Primary">
+      <a href="{{ nav_prefix }}#why">Why Us</a>
+      <a href="{{ nav_prefix }}#crew">Artists</a>
+      <a href="{{ '/gallery.html' | relative_url }}"{% if page.url == "/gallery.html" %} class="active"{% endif %}>Gallery</a>
+      <a href="{{ nav_prefix }}#contact">Contact</a>
+      <a href="{{ business.phone_href }}" class="call">{{ business.phone }}</a>
+    </nav>
+  </div>
+</header>

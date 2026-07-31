@@ -1,0 +1,11 @@
+title: Our Lady Tattoo Parlor
+description: American traditional, custom work, cover-ups and flash in San Marcos, TX.
+url: "https://www.ourladytattoo.com"
+baseurl: ""
+timezone: America/Chicago
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - README.md
