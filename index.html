@@ -21,9 +21,6 @@ schema: business
   Still placeholder / sample content to swap out:
     - The "Why Us" copy and service list below are written to fit a
       traditional street shop — edit freely to match how you actually work.
-    - Hero rotating photo backdrop is scaffolded but empty — see the
-      commented-out block right after <section class="hero" for what to
-      drop in once the 3 merch/lifestyle photos are available as files.
   Worth double-checking:
     - The shop's door signage promotes @doctaylortattooist and
       @lurksteadytattoos as its two Instagram handles. @doctaylortattooist
@@ -40,23 +37,18 @@ schema: business
       in the homepage "Why Us" cards.
     - images/gallery/*.jpg are 21 real tattoo photos from the crew, shown
       in the lightbox grid on gallery.html.
+    - images/merch/merch-*.jpg are the real hero backdrop photos, cross-
+      fading behind the headline (see .hero-bg-photo / @keyframes heroFade
+      in css/style.css).
 -->
 
 <section class="hero" id="top">
-  <!--
-    Rotating photo backdrop: drop your 3 merch/lifestyle photos in as
-    images/merch/merch-1.jpg, merch-2.jpg, merch-3.jpg (same folder pattern
-    as images/artists and images/shop), then uncomment this block. The
-    .hero-bg-photo / @keyframes heroFade rules in css/style.css already
-    handle the cross-fade — no other changes needed.
-
-    <div class="hero-backdrop" aria-hidden="true">
-      <img class="hero-bg-photo" src="{{ '/images/merch/merch-1.jpg' | relative_url }}" alt="">
-      <img class="hero-bg-photo" src="{{ '/images/merch/merch-2.jpg' | relative_url }}" alt="">
-      <img class="hero-bg-photo" src="{{ '/images/merch/merch-3.jpg' | relative_url }}" alt="">
-    </div>
-    <div class="hero-scrim" aria-hidden="true"></div>
-  -->
+  <div class="hero-backdrop" aria-hidden="true">
+    <img class="hero-bg-photo" src="{{ '/images/merch/merch-1.jpg' | relative_url }}" alt="">
+    <img class="hero-bg-photo" src="{{ '/images/merch/merch-2.jpg' | relative_url }}" alt="">
+    <img class="hero-bg-photo" src="{{ '/images/merch/merch-3.jpg' | relative_url }}" alt="">
+  </div>
+  <div class="hero-scrim" aria-hidden="true"></div>
   <div class="hero-halftone" aria-hidden="true"></div>
   <svg class="hero-bg-motif" viewBox="0 0 200 260" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true">
     <!-- original woodcut-style rose motif -->
